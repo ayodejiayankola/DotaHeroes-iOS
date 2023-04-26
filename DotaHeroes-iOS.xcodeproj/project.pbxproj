@@ -12,6 +12,7 @@
 		356994DD29F8049C009ECB6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356994DC29F8049C009ECB6A /* ViewController.swift */; };
 		356994E229F8049F009ECB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356994E129F8049F009ECB6A /* Assets.xcassets */; };
 		356994E529F8049F009ECB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356994E329F8049F009ECB6A /* LaunchScreen.storyboard */; };
+		35EADE7E29F9397C007AD942 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADE7D29F9397C007AD942 /* Hero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		356994E129F8049F009ECB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		356994E429F8049F009ECB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356994E629F8049F009ECB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35EADE7D29F9397C007AD942 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,11 @@
 		356994D729F8049C009ECB6A /* DotaHeroes-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				356994F429F80BE7009ECB6A /* Resources */,
+				356994F329F80BD2009ECB6A /* Network */,
+				356994F229F80BC8009ECB6A /* Model */,
+				356994EC29F80B3C009ECB6A /* Main */,
+				356994ED29F80B47009ECB6A /* Detail */,
 				356994D829F8049C009ECB6A /* AppDelegate.swift */,
 				356994DA29F8049C009ECB6A /* SceneDelegate.swift */,
 				356994DC29F8049C009ECB6A /* ViewController.swift */,
@@ -62,6 +69,106 @@
 				356994E629F8049F009ECB6A /* Info.plist */,
 			);
 			path = "DotaHeroes-iOS";
+			sourceTree = "<group>";
+		};
+		356994EC29F80B3C009ECB6A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				356994F129F80BAC009ECB6A /* View */,
+				356994F029F80BA1009ECB6A /* Controller */,
+				356994EF29F80B97009ECB6A /* Presenter */,
+				356994EE29F80B7B009ECB6A /* Protocols */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		356994ED29F80B47009ECB6A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				356994F529F80C10009ECB6A /* View */,
+				356994F629F80C1D009ECB6A /* Controller */,
+				356994F729F80C2D009ECB6A /* Presenter */,
+				356994F829F80C36009ECB6A /* Protocols */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		356994EE29F80B7B009ECB6A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		356994EF29F80B97009ECB6A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		356994F029F80BA1009ECB6A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		356994F129F80BAC009ECB6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		356994F229F80BC8009ECB6A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35EADE7D29F9397C007AD942 /* Hero.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		356994F329F80BD2009ECB6A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		356994F429F80BE7009ECB6A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		356994F529F80C10009ECB6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		356994F629F80C1D009ECB6A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		356994F729F80C2D009ECB6A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		356994F829F80C36009ECB6A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +244,7 @@
 				356994DD29F8049C009ECB6A /* ViewController.swift in Sources */,
 				356994D929F8049C009ECB6A /* AppDelegate.swift in Sources */,
 				356994DB29F8049C009ECB6A /* SceneDelegate.swift in Sources */,
+				35EADE7E29F9397C007AD942 /* Hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
