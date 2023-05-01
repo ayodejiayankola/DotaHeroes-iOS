@@ -18,9 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let container = DependencyContainer()
 		// Get the initial view controller from the container
   	let viewController = container.makeInitialViewController()
+		// Wrap the initial view controller in a UINavigationController
+		let navigationController = UINavigationController(rootViewController: viewController)
+		
 		window = UIWindow(frame: windowScene.coordinateSpace.bounds)
 		window?.windowScene = windowScene
 		window?.rootViewController = viewController
+		window?.rootViewController = navigationController
 		window?.makeKeyAndVisible()
 	}
 
