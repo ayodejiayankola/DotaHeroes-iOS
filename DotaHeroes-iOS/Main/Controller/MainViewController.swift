@@ -56,4 +56,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.textLabel?.text = "Cell \(indexPath.row + 1)"
 		return cell
 	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		let detailView = DetailView()
+		let detailViewController = DetailViewController(detailView: detailView)
+		navigationController?.pushViewController(detailViewController, animated: true)
+	}
 }

@@ -19,6 +19,9 @@
 		356994DD29F8049C009ECB6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356994DC29F8049C009ECB6A /* ViewController.swift */; };
 		356994E229F8049F009ECB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356994E129F8049F009ECB6A /* Assets.xcassets */; };
 		356994E529F8049F009ECB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356994E329F8049F009ECB6A /* LaunchScreen.storyboard */; };
+		35B930A82A030D950067B1D5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B930A72A030D950067B1D5 /* UIView+Extension.swift */; };
+		35B930AB2A030DD40067B1D5 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 35B930AA2A030DD40067B1D5 /* SDWebImage */; };
+		35B930AD2A030DD40067B1D5 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 35B930AC2A030DD40067B1D5 /* SDWebImageMapKit */; };
 		35EADE7E29F9397C007AD942 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADE7D29F9397C007AD942 /* Hero.swift */; };
 		35EADE8129F94823007AD942 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADE8029F94823007AD942 /* Constants.swift */; };
 		35EADE8429F9489D007AD942 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EADE8329F9489D007AD942 /* APIError.swift */; };
@@ -40,6 +43,7 @@
 		356994E129F8049F009ECB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		356994E429F8049F009ECB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356994E629F8049F009ECB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35B930A72A030D950067B1D5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		35EADE7D29F9397C007AD942 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		35EADE8029F94823007AD942 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35EADE8329F9489D007AD942 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B930AD2A030DD40067B1D5 /* SDWebImageMapKit in Frameworks */,
+				35B930AB2A030DD40067B1D5 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +172,7 @@
 				35EADE8029F94823007AD942 /* Constants.swift */,
 				35EADE8329F9489D007AD942 /* APIError.swift */,
 				35EADE8729F94F4C007AD942 /* DependencyContainer.swift */,
+				35B930A72A030D950067B1D5 /* UIView+Extension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -217,6 +224,10 @@
 			dependencies = (
 			);
 			name = "DotaHeroes-iOS";
+			packageProductDependencies = (
+				35B930AA2A030DD40067B1D5 /* SDWebImage */,
+				35B930AC2A030DD40067B1D5 /* SDWebImageMapKit */,
+			);
 			productName = "DotaHeroes-iOS";
 			productReference = 356994D529F8049C009ECB6A /* DotaHeroes-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 356994CC29F8049C009ECB6A;
+			packageReferences = (
+				35B930A92A030DD40067B1D5 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 356994D629F8049C009ECB6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,6 +288,7 @@
 				35EADE8829F94F4C007AD942 /* DependencyContainer.swift in Sources */,
 				350D2DC829FB2ABE00826635 /* DetailViewPresenter.swift in Sources */,
 				350D2DBE29FB2A7200826635 /* MainView.swift in Sources */,
+				35B930A82A030D950067B1D5 /* UIView+Extension.swift in Sources */,
 				350D2DC229FB2A8A00826635 /* MainViewPresenter.swift in Sources */,
 				350D2DC629FB2AB200826635 /* DetailViewController.swift in Sources */,
 				35EADE8129F94823007AD942 /* Constants.swift in Sources */,
@@ -494,6 +509,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		35B930A92A030DD40067B1D5 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		35B930AA2A030DD40067B1D5 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35B930A92A030DD40067B1D5 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		35B930AC2A030DD40067B1D5 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35B930A92A030DD40067B1D5 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 356994CD29F8049C009ECB6A /* Project object */;
 }
