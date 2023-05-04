@@ -8,17 +8,7 @@
 import Foundation
 import UIKit
 
-protocol Reusable {
-		static var reuseIdentifier: String { get }
-}
-
-extension Reusable {
-		static var reuseIdentifier: String {
-				return String(describing: self)
-		}
-}
-
-class MainTableViewCell: UITableViewCell, Reusable {
+class MainTableViewCell: UITableViewCell,ReusableCell {
 	
 	private let cellImageView = UIImageView()
 	private let cellLabel = UILabel()
