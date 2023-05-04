@@ -8,6 +8,5 @@
 import Foundation
 
 struct Constants {
-	static let apiBaseURL = "https://api.opendota.com/api/"
+		static let apiBaseURL = "https://api.opendota.com/api"
 }
-

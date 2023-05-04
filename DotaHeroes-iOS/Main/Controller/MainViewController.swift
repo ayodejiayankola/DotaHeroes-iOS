@@ -23,6 +23,9 @@ class MainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		mainView.tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
+		mainView.tableView.rowHeight = 120
 		mainView.tableView.dataSource = self
 		mainView.tableView.delegate = self
 		view.addSubview(mainView)
@@ -52,10 +55,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-		cell.textLabel?.text = "Cell \(indexPath.row + 1)"
+		let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as! MainTableViewCell
+		cell.configure(image: UIImage(named: "image-view"), text: "Cell \(indexPath.row + 1)")
 		return cell
 	}
+	
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
