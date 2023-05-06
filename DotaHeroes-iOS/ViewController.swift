@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	private let api = API<[Hero]>()
+	let heroAPI = HeroAPI()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -17,13 +17,14 @@ class ViewController: UIViewController {
 	}
 	
 	private func fetchHeroes() {
-		api.request(endpoint: "heroStats", method: .get) { result in
-			switch result {
-			case .success(let heroes):
-				print(heroes)
-			case .failure(let error):
-				print(error)
-			}
+
+		heroAPI.fetchHeroes { result in
+				switch result {
+				case .success(let heroes):
+						print("Fetched \(heroes) heroes!")
+				case .failure(let error):
+						print("Error fetching heroes: \(error)")
+				}
 		}
 	}
 }
