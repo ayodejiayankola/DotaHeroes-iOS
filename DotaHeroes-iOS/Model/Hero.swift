@@ -8,15 +8,15 @@
 import Foundation
 
 struct Hero: Codable {
-	let id: Int
-	let name: String
-	let localizedName: String
-	let primaryAttribute: String
-	let attackType: String
-	let roles: [String]
-	let heroImageURL: String
-	let legs: String
-	
+	let id: Int?
+	let name: String?
+	let localizedName: String?
+	let primaryAttribute: String?
+	let attackType: String?
+	let roles: [String]?
+	let heroImageURL: String?
+	let legs: Int?
+
 	enum CodingKeys: String, CodingKey {
 		case id
 		case name

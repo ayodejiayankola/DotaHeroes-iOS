@@ -8,13 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+	
+	private let api = API<[Hero]>()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
-		self.view.backgroundColor = .red
+		fetchHeroes()
 	}
-
-
+	
+	private func fetchHeroes() {
+		api.request(endpoint: "heroStats", method: .get) { result in
+			switch result {
+			case .success(let heroes):
+				print(heroes)
+			case .failure(let error):
+				print(error)
+			}
+		}
+	}
 }
 

@@ -12,4 +12,5 @@ enum APIError: Error {
 		case invalidResponse
 		case decodingError
 		case serverError(String)
+		case requestFailed(Error)
 }
