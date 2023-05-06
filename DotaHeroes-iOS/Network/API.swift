@@ -42,7 +42,6 @@ class API<T: Decodable>: APIProtocol {
 				let decoder = JSONDecoder()
 				decoder.keyDecodingStrategy = .convertFromSnakeCase
 				let result = try decoder.decode(ResponseType.self, from: data)
-				print("my result \(result)")
 				completion(.success(result))
 			} catch {
 				completion(.failure(.decodingError))
