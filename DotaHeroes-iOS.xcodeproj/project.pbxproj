@@ -120,6 +120,7 @@
 		356994D729F8049C009ECB6A /* DotaHeroes-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				35F619F82A0689CE001DD9EC /* Protocols */,
 				356994F429F80BE7009ECB6A /* Resources */,
 				356994F329F80BD2009ECB6A /* Network */,
 				356994F229F80BC8009ECB6A /* Model */,
@@ -244,8 +245,6 @@
 		356994F829F80C36009ECB6A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				35121F2A2A046A8300F96CFB /* ReusableCell.swift */,
-				35F619E92A067D70001DD9EC /* APIProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -256,6 +255,15 @@
 				35F619F12A068734001DD9EC /* DotaHeroes_iOSTests.swift */,
 			);
 			path = "DotaHeroes-iOSTests";
+			sourceTree = "<group>";
+		};
+		35F619F82A0689CE001DD9EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				35121F2A2A046A8300F96CFB /* ReusableCell.swift */,
+				35F619E92A067D70001DD9EC /* APIProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
