@@ -11,9 +11,12 @@ import UIKit
 class MainViewController: UIViewController {
 	
 	let mainView: MainView
+	private let mainViewPresenter: MainViewPresenterProtocol
+	private var heroes: [Hero] = []
 	
-	init(mainView: MainView) {
+	init(mainView: MainView, mainViewPresenter: MainViewPresenterProtocol) {
 		self.mainView = mainView
+		self.mainViewPresenter = mainViewPresenter
 		super.init(nibName: nil, bundle: nil)
 	}
 	
@@ -31,6 +34,18 @@ class MainViewController: UIViewController {
 		view.addSubview(mainView)
 		constraintSetup()
 		setupProperties()
+		mainViewPresenter.fetchHeroes { result in
+			switch result {
+			case .success(let heroes):
+				self.heroes = heroes
+				DispatchQueue.main.async {
+					self.mainView.tableView.reloadData()
+				}
+			case .failure(let error):
+				// Handle the error here
+				print("Failed to fetch heroes data: \(error)")
+			}
+		}
 	}
 	
 	private func constraintSetup(){
@@ -51,12 +66,14 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 10
+		return heroes.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as! MainTableViewCell
-		cell.configure(image: UIImage(named: "image-view"), text: "Cell \(indexPath.row + 1)")
+		let hero = heroes[indexPath.row]
+		let heroImage = Constants.imageBaseURL+(hero.heroImageURL ?? "")
+		cell.configure(imageURL: heroImage, text: hero.name ?? "No Localised Name")
 		return cell
 	}
 	

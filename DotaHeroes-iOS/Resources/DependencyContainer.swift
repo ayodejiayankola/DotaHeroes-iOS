@@ -12,15 +12,8 @@ import UIKit
 class DependencyContainer {
 	func makeInitialViewController() -> MainViewController {
 		let view = MainView()
-		let viewController = MainViewController(mainView: view)
+		let presenter = MainViewPresenter(heroAPI: HeroAPI())
+		let viewController = MainViewController(mainView: view, mainViewPresenter: presenter)
 		return viewController
 	}
 }
-
-
-//class DependencyContainer {
-//	func makeInitialViewController() -> ViewController {
-//		let viewController = ViewController()
-//		return viewController
-//	}
-//}

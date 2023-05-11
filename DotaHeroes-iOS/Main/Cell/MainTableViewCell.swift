@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class MainTableViewCell: UITableViewCell,ReusableCell {
 	
@@ -39,8 +40,10 @@ class MainTableViewCell: UITableViewCell,ReusableCell {
 		])
 	}
 	
-	func configure(image: UIImage?, text: String) {
-		cellImageView.image = image
+	func configure(imageURL: String?, text: String) {
+		if let imageURL = imageURL {
+			cellImageView.sd_setImage(with: URL(string: imageURL))
+		}
 		cellLabel.text = text
 	}
 }
