@@ -6,3 +6,18 @@
 //
 
 import Foundation
+protocol DetailViewPresenterProtocol {
+	func getHero() -> Hero?
+}
+
+class DetailViewPresenter: DetailViewPresenterProtocol {
+	private let hero: Hero?
+	
+	init(hero: Hero?) {
+		self.hero = hero
+	}
+	
+	func getHero() -> Hero? {
+		return hero
+	}
+}

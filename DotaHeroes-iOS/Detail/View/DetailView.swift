@@ -52,14 +52,6 @@ class DetailView: UIView {
 	
 	init() {
 		super.init(frame: .zero)
-		nameLabel.text = "Dragon Knight"
-		attributesLabel.text = "Strength - Melee"
-		rolesLabel.text = "Carry, Pusher, Initiator"
-		legsLabel.text = "2 legs"
-		imageView.image = UIImage(named: "dragon_knight")
-		if let url = URL(string: "https://cdn.dota2.com/apps/dota2/images/heroes/dragon_knight_full.png") {
-			imageView.sd_setImage(with: url)
-		}
 		setupViews()
 	}
 	required init?(coder aDecoder: NSCoder) {
@@ -102,6 +94,19 @@ class DetailView: UIView {
 			legsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
 			legsLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
 		])
+	}
+	
+	func configure(with hero: Hero) {
+		nameLabel.text = hero.name
+		legsLabel.text = "\(String(describing: hero.legs))"
+		attributesLabel.text = hero.primaryAttribute
+		let roles = hero.roles?.joined(separator: ", ")
+		rolesLabel.text = roles
+		if let imageURLString = hero.heroImageURL, let imageURL = URL(string: Constants.imageBaseURL + "\(imageURLString)")  {
+			imageView.sd_setImage(with: imageURL, completed: nil)
+		} else {
+			imageView.image = UIImage(named: "placeholder")
+		}
 	}
 }
 

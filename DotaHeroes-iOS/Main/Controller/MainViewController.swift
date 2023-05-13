@@ -77,11 +77,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 		return cell
 	}
 	
-	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		let hero = heroes[indexPath.row]
 		let detailView = DetailView()
-		let detailViewController = DetailViewController(detailView: detailView)
+		let detailViewPresenter = DetailViewPresenter(hero: hero)
+		let detailViewController = DetailViewController(detailView: detailView, detailViewPresenter: detailViewPresenter)
 		navigationController?.pushViewController(detailViewController, animated: true)
 	}
 }
