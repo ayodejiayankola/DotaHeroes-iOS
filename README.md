@@ -9,23 +9,21 @@ To see more details about a hero, simply tap on the hero's row in the table view
 ## Technologies Used
 * Swift 5
 * UIKit
-* RxSwift
 * REST API
 * Unit Testing
 * UI Testing
 * MVP Architecture
 * Dependency Injection
 * Delegate and Protocol Pattern
-* Notifications and Observers Pattern
 * Programmatic Swift
+* Swift Package Manager
 
 ## Installation
 To run the app, you'll need Xcode 14.0 or later installed on your machine.
 
 ## Clone this repository.
 * Navigate to the project directory in the terminal.
-* Run pod install to install the required dependencies.
-* Open ``Dota Heroes.xcworkspace`` in Xcode.
+* Open ``DotaHeroes-iOS.xcodeproj`` in Xcode.
 * Build and run the app using the Xcode simulator or a connected iOS device.
 
 
@@ -38,3 +36,4 @@ Dota Heroes is available under the MIT license. See the LICENSE file for more in
 
 ## Acknowledgments
 Dota Heroes uses the OpenDota API to fetch hero data. Thank you to the OpenDota team for providing this valuable resource!
+API URL: https://api.opendota.com/api/heroStats
