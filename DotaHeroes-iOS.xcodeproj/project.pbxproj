@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3509BAA02A153B58009CD1F2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3509BA9F2A153B58009CD1F2 /* Realm */; };
+		3509BAA22A153B58009CD1F2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3509BAA12A153B58009CD1F2 /* RealmSwift */; };
 		350D2DBE29FB2A7200826635 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D2DBD29FB2A7200826635 /* MainView.swift */; };
 		350D2DC029FB2A7F00826635 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D2DBF29FB2A7F00826635 /* MainViewController.swift */; };
 		350D2DC229FB2A8A00826635 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350D2DC129FB2A8A00826635 /* MainViewPresenter.swift */; };
@@ -78,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3509BAA22A153B58009CD1F2 /* RealmSwift in Frameworks */,
+				3509BAA02A153B58009CD1F2 /* Realm in Frameworks */,
 				35B930AD2A030DD40067B1D5 /* SDWebImageMapKit in Frameworks */,
 				35B930AB2A030DD40067B1D5 /* SDWebImage in Frameworks */,
 			);
@@ -288,6 +292,8 @@
 			packageProductDependencies = (
 				35B930AA2A030DD40067B1D5 /* SDWebImage */,
 				35B930AC2A030DD40067B1D5 /* SDWebImageMapKit */,
+				3509BA9F2A153B58009CD1F2 /* Realm */,
+				3509BAA12A153B58009CD1F2 /* RealmSwift */,
 			);
 			productName = "DotaHeroes-iOS";
 			productReference = 356994D529F8049C009ECB6A /* DotaHeroes-iOS.app */;
@@ -341,6 +347,7 @@
 			mainGroup = 356994CC29F8049C009ECB6A;
 			packageReferences = (
 				35B930A92A030DD40067B1D5 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				3509BA9E2A153B58009CD1F2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 356994D629F8049C009ECB6A /* Products */;
 			projectDirPath = "";
@@ -668,6 +675,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3509BA9E2A153B58009CD1F2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		35B930A92A030DD40067B1D5 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -679,6 +694,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3509BA9F2A153B58009CD1F2 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3509BA9E2A153B58009CD1F2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		3509BAA12A153B58009CD1F2 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3509BA9E2A153B58009CD1F2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		35B930AA2A030DD40067B1D5 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 35B930A92A030DD40067B1D5 /* XCRemoteSwiftPackageReference "SDWebImage" */;

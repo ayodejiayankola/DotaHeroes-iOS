@@ -13,4 +13,5 @@ enum APIError: Error {
 		case decodingError
 		case serverError(String)
 		case requestFailed(Error)
+	  case realmError
 }

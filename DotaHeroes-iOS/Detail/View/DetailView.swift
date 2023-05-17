@@ -100,7 +100,7 @@ class DetailView: UIView {
 		nameLabel.text = hero.name
 		legsLabel.text = "\(String(describing: hero.legs))"
 		attributesLabel.text = hero.primaryAttribute
-		let roles = hero.roles?.joined(separator: ", ")
+		let roles = hero.roles.compactMap { $0 }.joined(separator: ", ")
 		rolesLabel.text = roles
 		if let imageURLString = hero.heroImageURL, let imageURL = URL(string: Constants.imageBaseURL + "\(imageURLString)")  {
 			imageView.sd_setImage(with: imageURL, completed: nil)

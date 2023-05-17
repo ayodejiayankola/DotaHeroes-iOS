@@ -17,9 +17,11 @@ To see more details about a hero, simply tap on the hero's row in the table view
 * Delegate and Protocol Pattern
 * Programmatic Swift
 * Swift Package Manager
+* REALM SWIFT as Local Storage
 
 ## Installation
-To run the app, you'll need Xcode 14.0 or later installed on your machine.
+* To run the app, you'll need Xcode 14.0 or later installed on your machine.
+* To test the implementation using REALM DB: Switch to the `task-integrate-realm-db` branch. To switch type `git checkout task-integrate-realm-db`
 
 ## Clone this repository.
 * Navigate to the project directory in the terminal.

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class MainViewController: UIViewController {
 	
@@ -36,13 +37,16 @@ class MainViewController: UIViewController {
 		setupProperties()
 		mainViewPresenter.fetchHeroes { result in
 			switch result {
-			case .success(let heroes):
-				self.heroes = heroes
+			case .success:
 				DispatchQueue.main.async {
+					if let heroesResults = self.mainViewPresenter.getHeroes() {
+						self.heroes = Array(heroesResults)
+					} else {
+						self.heroes = []
+					}
 					self.mainView.tableView.reloadData()
 				}
 			case .failure(let error):
-				// Handle the error here
 				print("Failed to fetch heroes data: \(error)")
 			}
 		}
@@ -71,7 +75,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as! MainTableViewCell
+		
 		let hero = heroes[indexPath.row]
+		print(heroes)
 		let heroImage = Constants.imageBaseURL+(hero.heroImageURL ?? "")
 		cell.configure(imageURL: heroImage, text: hero.name ?? "No Localised Name")
 		return cell
