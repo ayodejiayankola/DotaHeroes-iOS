@@ -21,6 +21,8 @@
 		356994DD29F8049C009ECB6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356994DC29F8049C009ECB6A /* ViewController.swift */; };
 		356994E229F8049F009ECB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356994E129F8049F009ECB6A /* Assets.xcassets */; };
 		356994E529F8049F009ECB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356994E329F8049F009ECB6A /* LaunchScreen.storyboard */; };
+		356BD11B2A2539D300EE3057 /* DetailViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356BD11A2A2539D300EE3057 /* DetailViewPresenterTests.swift */; };
+		356BD11F2A253B0A00EE3057 /* MockDetailViewPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356BD11E2A253B0A00EE3057 /* MockDetailViewPresenterProtocol.swift */; };
 		35B1FE692A1CED64009F34AF /* APIUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1FE682A1CED64009F34AF /* APIUnitTest.swift */; };
 		35B1FE6C2A1CF9FF009F34AF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 35B1FE6B2A1CF9FF009F34AF /* SDWebImage */; };
 		35B1FE6E2A1CFA03009F34AF /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 35B1FE6D2A1CFA03009F34AF /* SDWebImageMapKit */; };
@@ -66,6 +68,8 @@
 		356994E129F8049F009ECB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		356994E429F8049F009ECB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		356994E629F8049F009ECB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356BD11A2A2539D300EE3057 /* DetailViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenterTests.swift; sourceTree = "<group>"; };
+		356BD11E2A253B0A00EE3057 /* MockDetailViewPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailViewPresenterProtocol.swift; sourceTree = "<group>"; };
 		35B1FE682A1CED64009F34AF /* APIUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUnitTest.swift; sourceTree = "<group>"; };
 		35B930A72A030D950067B1D5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		35C72C022A1E675A00A72F2D /* MainViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenterTests.swift; sourceTree = "<group>"; };
@@ -271,6 +275,31 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		356BD1182A25386700EE3057 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				356BD11D2A253B0400EE3057 /* Mocks */,
+				356BD1192A25387600EE3057 /* PresenterTest */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		356BD1192A25387600EE3057 /* PresenterTest */ = {
+			isa = PBXGroup;
+			children = (
+				356BD11A2A2539D300EE3057 /* DetailViewPresenterTests.swift */,
+			);
+			path = PresenterTest;
+			sourceTree = "<group>";
+		};
+		356BD11D2A253B0400EE3057 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				356BD11E2A253B0A00EE3057 /* MockDetailViewPresenterProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		35B1FE6A2A1CF9FF009F34AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +335,7 @@
 		35F619F02A068734001DD9EC /* DotaHeroes-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				356BD1182A25386700EE3057 /* DetailView */,
 				35C72C082A1E6CAD00A72F2D /* MainView */,
 				35625CDF2A19719B00BB1F6F /* NetworkUnitTest */,
 				35F619F12A068734001DD9EC /* DotaHeroes_iOSTests.swift */,
@@ -460,10 +490,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356BD11F2A253B0A00EE3057 /* MockDetailViewPresenterProtocol.swift in Sources */,
 				35B1FE692A1CED64009F34AF /* APIUnitTest.swift in Sources */,
 				35F619F22A068734001DD9EC /* DotaHeroes_iOSTests.swift in Sources */,
 				35C72C072A1E6B5000A72F2D /* MockHeroAPI.swift in Sources */,
 				35C72C032A1E675A00A72F2D /* MainViewPresenterTests.swift in Sources */,
+				356BD11B2A2539D300EE3057 /* DetailViewPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
