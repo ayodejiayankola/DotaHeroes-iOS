@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Hero: Codable {
+struct Hero: Codable, Equatable {
 	let id: Int?
 	let name: String?
 	let localizedName: String?
@@ -16,7 +16,7 @@ struct Hero: Codable {
 	let roles: [String]?
 	let heroImageURL: String?
 	let legs: Int?
-
+	
 	enum CodingKeys: String, CodingKey {
 		case id
 		case name
