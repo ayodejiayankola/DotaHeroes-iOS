@@ -51,7 +51,6 @@ final class APIUnitTest: XCTestCase {
 		switch receivedResult {
 		case .success(let heroes):
 			XCTAssertFalse(heroes.isEmpty, "Received empty list of heroes")
-			// You can perform further assertions on the received heroes if needed
 		case .failure(let error):
 			XCTFail("Received API error: \(error.localizedDescription)")
 		default:
