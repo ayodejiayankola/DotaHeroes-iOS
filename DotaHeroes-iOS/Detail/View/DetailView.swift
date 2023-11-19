@@ -98,7 +98,7 @@ class DetailView: UIView {
 	
 	func configure(with hero: Hero) {
 		nameLabel.text = hero.name
-		legsLabel.text = "\(String(describing: hero.legs))"
+		legsLabel.text = "\(hero.legs ?? 0)"
 		attributesLabel.text = hero.primaryAttribute
 		let roles = hero.roles?.joined(separator: ", ")
 		rolesLabel.text = roles
