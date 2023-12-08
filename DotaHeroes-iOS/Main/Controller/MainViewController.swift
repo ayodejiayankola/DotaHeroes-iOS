@@ -34,12 +34,12 @@ class MainViewController: UIViewController {
 		view.addSubview(mainView)
 		constraintSetup()
 		setupProperties()
-		mainViewPresenter.fetchHeroes { result in
+		mainViewPresenter.fetchHeroes { [weak self] result in
 			switch result {
 			case .success(let heroes):
-				self.heroes = heroes
+				self?.heroes = heroes
 				DispatchQueue.main.async {
-					self.mainView.tableView.reloadData()
+					self?.mainView.tableView.reloadData()
 				}
 			case .failure(let error):
 				// Handle the error here
